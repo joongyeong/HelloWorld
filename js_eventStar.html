@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>목록 태그</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style>
+
+</style>
+<script>
+window.onload= function() {
+/*
+	var cnt = 0;
+	document.getElementById('btn').onclick = function() {
+		if(cnt >= 5) {
+			this.textContent = "평점";
+			cnt = 0;
+		} else {
+			this.textContent += "★";
+			cnt++;
+		}
+	}
+*/
+
+	document.getElementById('btn').onclick = function() {
+		var strval = this.textContent;
+		if (strval == '평점') {
+			this.textContent += "★";
+		} else {
+			var re = new RegExp("★", "ig");
+			var cntStar = strval.match(re);
+			if(cntStar.length > 4) {
+				this.textContent = "평점";
+			} else {
+				this.textContent += "★";
+			}
+		}
+	}
+}
+</script>
+</head>
+<body>
+<button id="btn">평점</button>
+</body>
+</html>
+
+
+
+
+
+
+
